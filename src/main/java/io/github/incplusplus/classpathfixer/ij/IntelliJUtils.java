@@ -19,6 +19,6 @@ public final class IntelliJUtils extends GeneralXmlUtils
 	
 	public static Module getIJModuleForXML(String rawXml) throws IOException
 	{
-		return xmlMapper.readValue(rawXml, Module.class);
+		return getForXml(rawXml,Module.class);
 	}
 }
