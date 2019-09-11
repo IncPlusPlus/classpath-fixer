@@ -1,10 +1,10 @@
-package io.github.incplusplus.classpathfixer.module.component.content;
+package io.github.incplusplus.classpathfixer.ij.module.component.content;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.github.incplusplus.classpathfixer.module.component.content.classpathentry.ExcludeFolder;
-import io.github.incplusplus.classpathfixer.module.component.content.classpathentry.SourceFolder;
+import io.github.incplusplus.classpathfixer.ij.module.component.content.classpathentry.ExcludeFolder;
+import io.github.incplusplus.classpathfixer.ij.module.component.content.classpathentry.SourceFolder;
 
 @JacksonXmlRootElement(localName = "content")
 public class Content

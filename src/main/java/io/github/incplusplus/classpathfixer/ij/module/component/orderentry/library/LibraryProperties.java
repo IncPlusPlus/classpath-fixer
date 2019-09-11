@@ -1,4 +1,4 @@
-package io.github.incplusplus.classpathfixer.module.component.orderentry.library;
+package io.github.incplusplus.classpathfixer.ij.module.component.orderentry.library;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
