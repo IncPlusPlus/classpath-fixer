@@ -1,7 +1,7 @@
-package elements.module.component.content.classpathentry;
+package io.github.incplusplus.classpathfixer.module.component.content.classpathentry;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import elements.module.component.content.ContentElement;
+import io.github.incplusplus.classpathfixer.module.component.content.ContentElement;
 
 public abstract class AbstractClasspathEntry implements ContentElement
 {

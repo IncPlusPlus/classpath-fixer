@@ -1,11 +1,11 @@
-package elements.module.component.orderentry.library;
+package io.github.incplusplus.classpathfixer.module.component.orderentry.library;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import elements.module.component.orderentry.library.content.Classes;
-import elements.module.component.orderentry.library.content.Javadoc;
-import elements.module.component.orderentry.library.content.Sources;
+import io.github.incplusplus.classpathfixer.module.component.orderentry.library.content.Classes;
+import io.github.incplusplus.classpathfixer.module.component.orderentry.library.content.Javadoc;
+import io.github.incplusplus.classpathfixer.module.component.orderentry.library.content.Sources;
 
 @JacksonXmlRootElement(localName = "library")
 public class Library

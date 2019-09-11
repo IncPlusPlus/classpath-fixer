@@ -1,9 +1,9 @@
-package elements.module;
+package io.github.incplusplus.classpathfixer.module;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import elements.module.component.Component;
+import io.github.incplusplus.classpathfixer.module.component.Component;
 
 @JacksonXmlRootElement(localName = "module")
 public class Module

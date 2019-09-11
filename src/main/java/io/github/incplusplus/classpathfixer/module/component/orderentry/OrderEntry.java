@@ -1,10 +1,10 @@
-package elements.module.component.orderentry;
+package io.github.incplusplus.classpathfixer.module.component.orderentry;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import elements.module.component.ComponentElement;
-import elements.module.component.orderentry.library.Library;
+import io.github.incplusplus.classpathfixer.module.component.ComponentElement;
+import io.github.incplusplus.classpathfixer.module.component.orderentry.library.Library;
 
 @JacksonXmlRootElement(localName = "orderEntry")
 public class OrderEntry implements ComponentElement

@@ -1,4 +1,4 @@
-package elements.module.component.orderentry.library.content.root;
+package io.github.incplusplus.classpathfixer.module.component.orderentry.library.content.root;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;

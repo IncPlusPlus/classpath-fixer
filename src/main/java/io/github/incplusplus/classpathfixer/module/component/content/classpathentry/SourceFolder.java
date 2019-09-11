@@ -1,4 +1,4 @@
-package elements.module.component.content.classpathentry;
+package io.github.incplusplus.classpathfixer.module.component.content.classpathentry;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;

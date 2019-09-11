@@ -1,8 +1,8 @@
-package elements.module.component.output;
+package io.github.incplusplus.classpathfixer.module.component.output;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import elements.module.component.ComponentElement;
+import io.github.incplusplus.classpathfixer.module.component.ComponentElement;
 
 @JacksonXmlRootElement(localName = "output")
 public class Output implements ComponentElement

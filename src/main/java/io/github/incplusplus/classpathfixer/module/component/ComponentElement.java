@@ -1,4 +1,4 @@
-package elements.module.component;
+package io.github.incplusplus.classpathfixer.module.component;
 
 /**
  * This is just an indicator interface.
