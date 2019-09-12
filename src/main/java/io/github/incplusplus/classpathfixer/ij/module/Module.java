@@ -5,6 +5,8 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.github.incplusplus.classpathfixer.ij.module.component.Component;
 
+import java.util.List;
+
 @JacksonXmlRootElement(localName = "module")
 public class Module
 {
@@ -12,8 +14,9 @@ public class Module
 	String type;
 	@JacksonXmlProperty(isAttribute = true)
 	String version;
+	@JacksonXmlProperty(localName = "component")
 	@JsonInclude(JsonInclude.Include.NON_NULL)
-	Component component;
+	List<Component> component;
 	
 	public String getType()
 	{
@@ -35,12 +38,12 @@ public class Module
 		this.version = version;
 	}
 	
-	public Component getComponent()
+	public List<Component> getComponent()
 	{
 		return component;
 	}
 	
-	public void setComponent(Component component)
+	public void setComponent(List<Component> component)
 	{
 		this.component = component;
 	}

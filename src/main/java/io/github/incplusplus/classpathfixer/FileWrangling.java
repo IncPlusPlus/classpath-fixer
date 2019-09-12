@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class FileWrangling
 {
-	public static IprClasspathPair getIprClasspathPairAtDir(File baseDir) throws IOException
+	public static ImlClasspathPair getImlClasspathPairAtDir(File baseDir) throws IOException
 	{
 		List<File> classpathFiles = Arrays.stream(Objects.requireNonNull(baseDir.listFiles()))
 				.filter(file -> file.getName().equalsIgnoreCase(".classpath"))
@@ -32,7 +32,7 @@ public class FileWrangling
 		{
 			System.out.println("Found Eclipse .classpath file at " + classpathFiles.get(0));
 			System.out.println("Along with...");
-			System.out.println("Likely associated IntelliJ .ipr file at " + projectFiles.get(0));
+			System.out.println("Likely associated IntelliJ .iml file at " + projectFiles.get(0));
 		}
 		else
 		{
@@ -40,6 +40,6 @@ public class FileWrangling
 		}
 		Classpath classpath = EclipseUtils.getECClasspathForXML(classpathFiles.get(0));
 		Module project = IntelliJUtils.getIJModuleForXml(projectFiles.get(0));
-		return new IprClasspathPair(classpath,project);
+		return new ImlClasspathPair(classpath,project);
 	}
 }

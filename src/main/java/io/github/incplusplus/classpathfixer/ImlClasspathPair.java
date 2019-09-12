@@ -4,14 +4,14 @@ import io.github.incplusplus.classpathfixer.ec.classpath.Classpath;
 import io.github.incplusplus.classpathfixer.ij.module.Module;
 
 /**
- * This is just an easy way to return both a .classpath and .ipr from one method
+ * This is just an easy way to return both a .classpath and .iml from one method
  */
-public class IprClasspathPair
+public class ImlClasspathPair
 {
 	private final Classpath classPath;
 	private final Module module;
 	
-	public IprClasspathPair(Classpath classPath, Module module) {
+	public ImlClasspathPair(Classpath classPath, Module module) {
 		this.classPath = classPath;
 		this.module = module;
 	}
