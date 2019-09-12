@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module type="JAVA_MODULE" version="4">
+    <component name="NewModuleRootManager">
+        <output url="file://$MODULE_DIR$"/>
+        <content url="file://$MODULE_DIR$/ci/jenkins"/>
+        <orderEntry type="module" exported="" module-name="rando_module"/>
+        <orderEntry type="inheritedJdk"/>
+        <orderEntry type="sourceFolder" forTests="false"/>
+        <orderEntry type="module" exported="" module-name="rando_mod"/>
+        <orderEntry type="module" exported="" module-name="yet_another_module"/>
+    </component>
+</module>

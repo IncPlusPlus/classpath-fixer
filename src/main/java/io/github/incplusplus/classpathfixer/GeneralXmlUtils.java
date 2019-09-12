@@ -11,7 +11,7 @@ import java.io.IOException;
 public abstract class GeneralXmlUtils
 {
 	private static JacksonXmlModule xmlModule;
-	protected static XmlMapper xmlMapper;
+	public static XmlMapper xmlMapper;
 	
 	static
 	{

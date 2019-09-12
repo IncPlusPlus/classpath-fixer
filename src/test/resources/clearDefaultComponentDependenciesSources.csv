@@ -1,0 +1,2 @@
+input,expected
+src/test/resources/project_variants/1/intact-proj.xml,src/test/resources/project_variants/1/module-library_removed.xml
