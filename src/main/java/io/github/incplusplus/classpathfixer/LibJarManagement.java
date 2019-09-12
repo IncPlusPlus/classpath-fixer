@@ -34,8 +34,9 @@ public final class LibJarManagement
 				.map(ClasspathEntry::getPath)
 				//Put that path into context
 				.map(classpathEntryRelativeString -> originalPair.getClassPathLocation()
-//						.getParent()
-						.getAbsolutePath().concat(classpathEntryRelativeString))
+						.getParent()
+						.concat(File.separator)
+						.concat(classpathEntryRelativeString))
 				.collect(Collectors.toList());
 		//Return these paths as constructed File instances
 		return libraryStrings.stream().map(File::new).collect(Collectors.toList());
