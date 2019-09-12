@@ -1,6 +1,7 @@
 package io.github.incplusplus.classpathfixer;
 
 import io.github.incplusplus.classpathfixer.ec.classpath.Classpath;
+import io.github.incplusplus.classpathfixer.ij.IntelliJUtils;
 import io.github.incplusplus.classpathfixer.ij.module.Module;
 
 import java.io.File;
@@ -23,8 +24,6 @@ class Logic
 		module.clearDefaultComponentDependencies();
 		//get the prefixed JARs from the eclipse classpath file
 		List<File> bundleJars = getBundleJarsUsedInEclipseClasspath(pair);
-//		List<File> bundleJar = getJarsFromManifestInJar(bundleJars.get(0));
-		
 		//for each prefixed JAR
 		for(File bundleJar : bundleJars)
 		{
@@ -32,12 +31,11 @@ class Logic
 			List<File> jarsNamedInManifest = getJarsFromManifestInJar(bundleJar);
 			for(File individualJar : jarsNamedInManifest)
 			{
-			
+				//add each to the module
+				module.addDefaultComponentDependency(individualJar,pair);
 			}
-					//add each to the module
 		}
-		
-		System.out.println("oof");
-		//TODO more implementation to come
+		IntelliJUtils.xmlMapper.writeValue(pair.getModulePathLocation(),module);
+		System.out.println("DONE!");
 	}
 }
