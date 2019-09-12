@@ -53,7 +53,14 @@ public class FileWrangling
 		Manifest mf = jarStream.getManifest();
 		Attributes attributes = mf.getMainAttributes();
 		String classpath = attributes.getValue("Class-Path");
-		List<String> classPathStrings = Arrays.asList(classpath.split(""));
-		return classPathStrings.stream().map(File::new).collect(Collectors.toList());
+		List<String> classPathStrings = Arrays.asList(classpath.split(" "));
+		List<String> fullClassPathStrings = classPathStrings.stream()
+				//filter out any blank entries
+				.filter(s -> !s.isEmpty())
+				//Resolve the absolute file location of the JARs referenced in the Class-Path
+				.map(s -> jarFile.getParent()
+						.concat(File.separator)
+						.concat(s)).collect(Collectors.toList());
+		return fullClassPathStrings.stream().map(File::new).collect(Collectors.toList());
 	}
 }
