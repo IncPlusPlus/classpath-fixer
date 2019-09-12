@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static io.github.incplusplus.classpathfixer.FileWrangling.getImlClasspathPairAtDir;
-import static io.github.incplusplus.classpathfixer.LibJarManagement.getBundleJarsUsedInEclipseClasspath;
+import static io.github.incplusplus.classpathfixer.ec.EclipseUtils.getBundleJarsUsedInEclipseClasspath;
 
 class Logic
 {
