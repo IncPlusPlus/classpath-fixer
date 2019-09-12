@@ -14,8 +14,8 @@
 # Log file
 *.log
 
-# BlueJ files
-*.ctxt
+# Maven stuff
+target/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
