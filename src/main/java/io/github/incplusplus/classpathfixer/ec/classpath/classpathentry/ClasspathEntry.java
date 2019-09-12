@@ -29,11 +29,11 @@ public class ClasspathEntry
 	@JacksonXmlProperty(isAttribute = true)
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	String combineaccessrules;
-//	@JacksonXmlProperty(localName = "attributes")
 	@JacksonXmlElementWrapper
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	List<Attribute> attributes;
 	
+	//region field getters and setters
 	public String getExcluding()
 	{
 		return excluding;
@@ -103,4 +103,15 @@ public class ClasspathEntry
 	{
 		this.attributes = attributes;
 	}
+	//endregion
+	
+//	public List<File> getExcludedItems()
+//	{
+//		if(Objects.isNull(getExported()))
+//		{
+//			return Collections.emptyList();
+//		}
+//		List<File> fileList
+//		return fileList;
+//	}
 }

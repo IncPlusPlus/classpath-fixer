@@ -5,7 +5,11 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.github.incplusplus.classpathfixer.ec.classpath.classpathentry.ClasspathEntry;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.Objects.isNull;
 
 @JacksonXmlRootElement(localName = "classpath")
 public class Classpath
@@ -22,5 +26,14 @@ public class Classpath
 	public void setClasspathEntryList(List<ClasspathEntry> classpathEntryList)
 	{
 		this.classpathEntryList = classpathEntryList;
+	}
+	
+	public List<ClasspathEntry> getLibraries()
+	{
+		if(isNull(classpathEntryList))
+			return Collections.emptyList();
+		return classpathEntryList.stream()
+				.filter(classpathEntry -> classpathEntry.getKind().equalsIgnoreCase("lib"))
+				.collect(Collectors.toList());
 	}
 }

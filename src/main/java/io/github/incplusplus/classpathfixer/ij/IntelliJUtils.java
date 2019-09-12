@@ -14,10 +14,10 @@ public final class IntelliJUtils extends GeneralXmlUtils
 	public static Module getIJModuleForXml(File fileContainingXml) throws IOException
 	{
 		String rawXml = inputStreamToString(new FileInputStream(fileContainingXml));
-		return getIJModuleForXML(rawXml);
+		return getIJModuleForXml(rawXml);
 	}
 	
-	public static Module getIJModuleForXML(String rawXml) throws IOException
+	public static Module getIJModuleForXml(String rawXml) throws IOException
 	{
 		return getForXml(rawXml,Module.class);
 	}
