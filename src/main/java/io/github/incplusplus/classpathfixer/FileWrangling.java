@@ -6,10 +6,14 @@ import io.github.incplusplus.classpathfixer.ij.IntelliJUtils;
 import io.github.incplusplus.classpathfixer.ij.module.Module;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.jar.Attributes;
+import java.util.jar.JarInputStream;
+import java.util.jar.Manifest;
 import java.util.stream.Collectors;
 
 public class FileWrangling
@@ -40,6 +44,16 @@ public class FileWrangling
 		}
 		Classpath classpath = EclipseUtils.getECClasspathForXML(classpathFiles.get(0));
 		Module project = IntelliJUtils.getIJModuleForXml(projectFiles.get(0));
-		return new ImlClasspathPair(classpath,project);
+		return new ImlClasspathPair(classpath, classpathFiles.get(0), project, projectFiles.get(0));
+	}
+
+	public static List<File> getJarsFromManifestInJar(File jarFile) throws IOException
+	{
+		JarInputStream jarStream = new JarInputStream(new FileInputStream(jarFile));
+		Manifest mf = jarStream.getManifest();
+		Attributes attributes = mf.getMainAttributes();
+		String classpath = attributes.getValue("Class-Path");
+		List<String> classPathStrings = Arrays.asList(classpath.split(""));
+		return classPathStrings.stream().map(File::new).collect(Collectors.toList());
 	}
 }

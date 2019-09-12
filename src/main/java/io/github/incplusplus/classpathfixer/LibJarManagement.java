@@ -1,6 +1,5 @@
 package io.github.incplusplus.classpathfixer;
 
-import io.github.incplusplus.classpathfixer.ec.classpath.Classpath;
 import io.github.incplusplus.classpathfixer.ec.classpath.classpathentry.ClasspathEntry;
 
 import java.io.File;
@@ -27,10 +26,18 @@ public final class LibJarManagement
 		return jarNamePrefix;
 	}
 	
-	public static List<File> getBundleJarsUsedIn(Classpath eclipseClasspath)
+	public static List<File> getBundleJarsUsedInEclipseClasspath(ImlClasspathPair originalPair)
 	{
-		List<ClasspathEntry> classpathEntries = eclipseClasspath.getLibraries();
-		List<String> libraryStrings = classpathEntries.stream().map(ClasspathEntry::getPath).collect(Collectors.toList());
+		List<ClasspathEntry> classpathEntries = originalPair.getClassPath().getClasspathEntriesWithPrefixedLibs();
+		List<String> libraryStrings = classpathEntries.stream()
+				//Get the path entry from each ClasspathEntry
+				.map(ClasspathEntry::getPath)
+				//Put that path into context
+				.map(classpathEntryRelativeString -> originalPair.getClassPathLocation()
+//						.getParent()
+						.getAbsolutePath().concat(classpathEntryRelativeString))
+				.collect(Collectors.toList());
+		//Return these paths as constructed File instances
 		return libraryStrings.stream().map(File::new).collect(Collectors.toList());
 	}
 }
