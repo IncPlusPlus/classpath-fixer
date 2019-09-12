@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static io.github.incplusplus.classpathfixer.FileWrangling.getImlClasspathPairAtDir;
+import static io.github.incplusplus.classpathfixer.FileWrangling.getJarsFromManifestInJar;
 import static io.github.incplusplus.classpathfixer.ec.EclipseUtils.getBundleJarsUsedInEclipseClasspath;
 
 class Logic
@@ -22,6 +23,20 @@ class Logic
 		module.clearDefaultComponentDependencies();
 		//get the prefixed JARs from the eclipse classpath file
 		List<File> bundleJars = getBundleJarsUsedInEclipseClasspath(pair);
+//		List<File> bundleJar = getJarsFromManifestInJar(bundleJars.get(0));
+		
+		//for each prefixed JAR
+		for(File bundleJar : bundleJars)
+		{
+			//of the list named within the prefixed JAR's manifest
+			List<File> jarsNamedInManifest = getJarsFromManifestInJar(bundleJar);
+			for(File individualJar : jarsNamedInManifest)
+			{
+			
+			}
+					//add each to the module
+		}
+		
 		System.out.println("oof");
 		//TODO more implementation to come
 	}
