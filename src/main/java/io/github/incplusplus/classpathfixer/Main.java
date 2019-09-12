@@ -8,8 +8,16 @@ import static io.github.incplusplus.classpathfixer.Logic.performDependencyUpdate
 
 public class Main
 {
-	//TODO currently only works for the basedir that contains a project
-	//  does not yet recurse
+	/*
+	TODO currently only works for the basedir that contains a project
+	  does not yet recurse
+	*/
+	
+	/*
+	TODO add more things that synchronize.
+	  i.e. implement functionality that will look at <classpathentry including...> to figure out what directories
+	  should be excluded
+	*/
 	public static void main(String[] args) throws IOException
 	{
 //		String raw = "<classpathentry kind=\"con\" path=\"org.eclipse.buildship.core.gradleclasspathcontainer\">\n" +
